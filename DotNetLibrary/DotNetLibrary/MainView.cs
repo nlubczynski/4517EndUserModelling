@@ -34,6 +34,11 @@ namespace DotNetLibrary
 
         private void addPlayerButtonClick(object sender, EventArgs e)
         {
+            addPlayer();
+        }
+
+        private void addPlayer()
+        {
             if(addPlayerTextBox.Text != enterTextPrompt && addPlayerTextBox.Text != "")
             {
                 // add to list
@@ -43,7 +48,7 @@ namespace DotNetLibrary
 
                 // clear the text box
                 addPlayerTextBox.Text = "";
-            }
+             }
         }
 
         private void addPlayerTextBox_Enter(object sender, EventArgs e)
@@ -79,11 +84,13 @@ namespace DotNetLibrary
         }
 
         private void addPlayerTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
+        { 
             if (e.KeyCode == Keys.Enter)
             {
-                addPlayerButtonClick(sender, e);
-            }
+                addPlayer();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }                        
         }
 
         private void startButton_Click(object sender, EventArgs e)
