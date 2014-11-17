@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace DotNetLibrary
 {
@@ -11,7 +12,7 @@ namespace DotNetLibrary
     {
         // Form variables
         private MainView mainView;
-        public List<string> players;
+        public ArrayList players;
 
         public MainView MainView
         {
@@ -21,7 +22,7 @@ namespace DotNetLibrary
         public DotNetClass()
         {
             mainView = new MainView(this);
-            players = new List<string>();
+            players = new ArrayList();
         }
 
         public MainMenu ShowMainMenu()
@@ -30,15 +31,9 @@ namespace DotNetLibrary
             return mainView.ReturnCode;
         }
 
-        public VBA.Collection getPlayers()
+        public string[] getPlayers()
         {
-            VBA.Collection collection = new VBA.Collection();
-            foreach (string player in players)
-            {
-                collection.Add(player);
-            }
-
-            return collection;
+            return (string[]) players.ToArray(typeof(string));
         }
     }
 }
