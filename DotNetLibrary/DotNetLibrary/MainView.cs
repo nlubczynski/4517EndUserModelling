@@ -14,7 +14,6 @@ namespace DotNetLibrary
     public partial class MainView : Form
     {
         private MainMenu returnVal;
-        private string enterTextPrompt = "Enter Name";
         private DotNetClass _controller;
 
         public MainMenu ReturnCode
@@ -27,45 +26,29 @@ namespace DotNetLibrary
             InitializeComponent();
             returnVal = MainMenu.NULL;
             _controller = controller;
-
-            // Form controls
-            addPlayerTextBox.Text = enterTextPrompt;            
         }
 
         private void addPlayerButtonClick(object sender, EventArgs e)
         {
-            addPlayer();
-        }
-
-        private void addPlayer()
-        {
-            if(addPlayerTextBox.Text != enterTextPrompt && addPlayerTextBox.Text != "")
+            if (isUserComplete())
             {
                 // add to list
-                _controller.players.Add(addPlayerTextBox.Text);
+                _controller.players.Add(nameTextBox.Text);
                 playerList.Items.Clear();
                 playerList.Items.AddRange(_controller.players.ToArray());
 
-                // clear the text box
-                addPlayerTextBox.Text = "";
-             }
-        }
+                // Clear input
+                nameTextBox.Text = "";
+                maleRadioButton.Checked = true;
+                profilePicture.Image = Properties.Resources.defaultFemale;
 
-        private void addPlayerTextBox_Enter(object sender, EventArgs e)
-        {
-            if(addPlayerTextBox.Text == enterTextPrompt)
-            {
-                addPlayerTextBox.Text = "";
-                addPlayerTextBox.Font = new Font(addPlayerTextBox.Font, FontStyle.Regular);
+                femaleRadioButton.Checked = false;
+                alienRadioButton.Checked = false;
             }
-        }
 
-        private void addPlayerTextBox_Leave(object sender, EventArgs e)
-        {
-            if(addPlayerTextBox.Text == "")
+            if(_controller.players.Count > 0)
             {
-                addPlayerTextBox.Text = enterTextPrompt;
-                addPlayerTextBox.Font = new Font(addPlayerTextBox.Font, FontStyle.Italic);
+                startButton.Enabled = true;
             }
         }
 
@@ -81,16 +64,16 @@ namespace DotNetLibrary
                     playerList.Items.AddRange(_controller.players.ToArray());
                 }
             }
-        }
 
-        private void addPlayerTextBox_KeyDown(object sender, KeyEventArgs e)
-        { 
-            if (e.KeyCode == Keys.Enter)
+            // Disable this button
+            removePlayerButton.Enabled = false;
+
+
+            // Check if we can start the game
+            if (_controller.players.Count <= 0)
             {
-                addPlayer();
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-            }                        
+                startButton.Enabled = false;
+            }
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -98,5 +81,70 @@ namespace DotNetLibrary
             returnVal = MainMenu.START_GAME;
             this.Close();
         }
+
+        private void playerList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(playerList.SelectedIndex >= 0)
+            {
+                removePlayerButton.Enabled = true;
+            }
+            else
+            {
+                removePlayerButton.Enabled = false;
+            }
+        }
+
+        private bool isUserComplete()
+        {
+            if(nameTextBox.Text != "" && (maleRadioButton.Checked || femaleRadioButton.Checked || alienRadioButton.Checked))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void addUserControlChanged(object sender, EventArgs e)
+        {
+            addPlayerButton.Enabled = isUserComplete();
+
+            if(sender.GetType() == maleRadioButton.GetType())
+            {
+                if(alienRadioButton.Checked)
+                {
+                    profilePicture.Image = Properties.Resources.defaultAlien;
+                }
+                else if(femaleRadioButton.Checked)
+                {
+                    profilePicture.Image = Properties.Resources.defaultFemale;
+                }
+                else
+                {
+                    profilePicture.Image = Properties.Resources.defaultMale;
+                }
+            }
+        }
+
+        private void profilePicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            dialog.Filter = "Image Files (.jpg, .png, .jpeg)| *.jpg;.*ping;*.jpeg";
+            dialog.Multiselect = false;
+
+           bool userClickedOk = dialog.ShowDialog() == DialogResult.OK;
+
+            if(userClickedOk)
+            {
+                try
+                {
+                    profilePicture.Image = Image.FromFile(dialog.FileName);
+                }
+                catch
+                {
+                    //gulp
+                }
+            }            
+        }            
     }
 }

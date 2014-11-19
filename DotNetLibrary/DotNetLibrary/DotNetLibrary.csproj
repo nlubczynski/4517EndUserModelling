@@ -140,6 +140,18 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male.png" />
+    <None Include="Resources\Female.png" />
+    <None Include="Resources\alien.png" />
+    <None Include="Resources\defaultMale.jpg" />
+    <Content Include="Resources\defaultAlien.jpg" />
+    <Content Include="Resources\defaultFemale.jpg" />
+    <Content Include="Resources\Spinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
