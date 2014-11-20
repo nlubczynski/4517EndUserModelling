@@ -1,0 +1,10 @@
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\bin\Release\TestingApp.exe.config
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\obj\Release\TestingApp.csprojResolveAssemblyReference.cache
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\obj\Release\TestingApp.Properties.Resources.resources
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\obj\Release\TestingApp.csproj.GenerateResource.Cache
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\bin\Release\TestingApp.exe
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\bin\Release\TestingApp.pdb
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\bin\Release\DotNetLibrary.dll
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\bin\Release\DotNetLibrary.pdb
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\obj\Release\TestingApp.exe
+C:\Users\NikLubz\Documents\Visual Studio 2013\Projects\DotNetLibrary\TestingApp\obj\Release\TestingApp.pdb

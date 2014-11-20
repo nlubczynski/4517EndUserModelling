@@ -1,0 +1,10 @@
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\Debug\TestingApp.exe.config
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\Debug\TestingApp.csprojResolveAssemblyReference.cache
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\Debug\TestingApp.Properties.Resources.resources
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\Debug\TestingApp.csproj.GenerateResource.Cache
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\Debug\TestingApp.exe
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\Debug\TestingApp.pdb
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\Debug\DotNetLibrary.dll
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\Debug\DotNetLibrary.pdb
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\Debug\TestingApp.exe
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\Debug\TestingApp.pdb
