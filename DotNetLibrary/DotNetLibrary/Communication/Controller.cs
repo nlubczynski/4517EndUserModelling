@@ -8,7 +8,7 @@ using System.Collections;
 namespace DotNetLibrary
 {
     [ClassInterface(ClassInterfaceType.AutoDual)]
-    public class DotNetClass
+    public class Controller
     {
         // Form variables
         private MainView mainView;
@@ -19,7 +19,7 @@ namespace DotNetLibrary
             get { return mainView; }
         }
 
-        public DotNetClass()
+        public Controller()
         {
             mainView = new MainView(this);
             players = new ArrayList();
@@ -31,9 +31,21 @@ namespace DotNetLibrary
             return mainView.ReturnCode;
         }
 
-        public string[] getPlayers()
+        public Models.User[] getPlayers()
         {
-            return (string[]) players.ToArray(typeof(string));
+            return players.ToArray(typeof(Models.User)) as Models.User[];
+        }
+
+        public Utility.Vector getPlayerVector()
+        {
+            Utility.Vector returnVal = new Utility.Vector(typeof(Models.User));
+
+            foreach(Models.User user in players)
+            {
+                returnVal.AddObject(user);
+            }
+
+            return returnVal;
         }
     }
 }

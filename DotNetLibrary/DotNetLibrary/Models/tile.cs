@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DotNetLibrary
+namespace DotNetLibrary.Models
 {
-    public enum MainMenu
+    public class Tile
     {
-        NULL = 0,
-        CLOSE_GAME,
-        START_GAME,
-        ERROR
-    };
+    }
 }

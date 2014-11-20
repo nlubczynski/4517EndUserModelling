@@ -20,8 +20,7 @@ namespace TestingApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
-            DotNetClass view = new DotNetClass();
+            Controller view = new Controller();
             Application.Run(view.MainView);
         }
     }

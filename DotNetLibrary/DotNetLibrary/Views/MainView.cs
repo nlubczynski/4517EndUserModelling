@@ -14,14 +14,14 @@ namespace DotNetLibrary
     public partial class MainView : Form
     {
         private MainMenu returnVal;
-        private DotNetClass _controller;
+        private Controller _controller;
 
         public MainMenu ReturnCode
         {
             get { return returnVal; }
         }
 
-        public MainView(DotNetClass controller)
+        public MainView(Controller controller)
         {
             InitializeComponent();
             returnVal = MainMenu.NULL;
@@ -32,15 +32,20 @@ namespace DotNetLibrary
         {
             if (isUserComplete())
             {
-                // add to list
-                _controller.players.Add(nameTextBox.Text);
+                // Add the new user
+                _controller.players.Add(
+                    new Models.User()
+                    .setName( nameTextBox.Text )
+                    .setGender( maleRadioButton.Checked ? Gender.MALE : femaleRadioButton.Checked ? Gender.FEMALE : Gender.ALIEN));
+
+                // Reset the list
                 playerList.Items.Clear();
-                playerList.Items.AddRange(_controller.players.ToArray());
+                playerList.Items.AddRange(_controller.getPlayers().Select(val => val.Name).ToArray());
 
                 // Clear input
                 nameTextBox.Text = "";
                 maleRadioButton.Checked = true;
-                profilePicture.Image = Properties.Resources.defaultFemale;
+                profilePicture.Image = Properties.Resources.defaultMale;
 
                 femaleRadioButton.Checked = false;
                 alienRadioButton.Checked = false;
@@ -61,7 +66,7 @@ namespace DotNetLibrary
                 {
                     _controller.players.RemoveAt(index);
                     playerList.Items.Clear();
-                    playerList.Items.AddRange(_controller.players.ToArray());
+                    playerList.Items.AddRange(_controller.getPlayers().Select(val => val.Name).ToArray());
                 }
             }
 
@@ -145,6 +150,21 @@ namespace DotNetLibrary
                     //gulp
                 }
             }            
-        }            
+        }
+
+        private void nameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+
+                if(isUserComplete())
+                {
+                    addPlayerButtonClick(sender, e);
+                }
+            }
+        }
+          
     }
 }
