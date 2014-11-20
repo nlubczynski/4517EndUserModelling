@@ -10,6 +10,13 @@ namespace DotNetLibrary.Models
     [ClassInterface(ClassInterfaceType.AutoDual)]
     public class Salary
     {
+        public double Wage { get; set; }
+        public double Tax { get; set; }
 
+        public Salary()
+        {
+            Wage = 0;
+            Tax = 0;
+        }
     }
 }

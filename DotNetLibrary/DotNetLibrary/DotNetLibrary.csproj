@@ -74,7 +74,15 @@
   <ItemGroup>
     <Compile Include="Communication\Communications.cs" />
     <Compile Include="Communication\Controller.cs" />
+    <Compile Include="Models\LifeTile.cs" />
+    <Compile Include="Models\Tile.cs" />
     <Compile Include="Utility\Vector.cs" />
+    <Compile Include="Views\GameBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\GameBoard.Designer.cs">
+      <DependentUpon>GameBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +92,6 @@
     <Compile Include="Models\House.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Models\Salary.cs" />
-    <Compile Include="Models\Tile.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -94,6 +101,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\GameBoard.resx">
+      <DependentUpon>GameBoard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +136,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\SpinnerStrip.png" />
+    <None Include="Resources\triangle.png" />
     <None Include="Resources\Male.png" />
     <None Include="Resources\Female.png" />
     <None Include="Resources\alien.png" />

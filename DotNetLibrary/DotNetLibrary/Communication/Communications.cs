@@ -20,6 +20,7 @@ namespace DotNetLibrary
         FEMALE,
         ALIEN
     };
+     
 
     public enum Stock
     {

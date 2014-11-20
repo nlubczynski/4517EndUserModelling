@@ -13,6 +13,7 @@ namespace DotNetLibrary.Utility
     {
         private ArrayList   _objects;
         private Type        _type;
+        private bool        _initiated;
 
         public Vector(Type type)
         {
@@ -21,10 +22,27 @@ namespace DotNetLibrary.Utility
 
             // Initiate the underlying array
             _objects = new ArrayList();
+            _initiated = true;
+        }
+
+        public Vector()
+        {
+            _initiated = false;
+        }
+
+        public void setType(object type)
+        {
+            // Store the type
+            _type = type.GetType();
+
+            // Initiate the underlying array
+            _initiated = true;
         }
 
         public bool AddObject(object obj)
         {
+            if (_initiated) return false;
+
             if (obj.GetType() == _type)
             {
                 _objects.Add(obj);
@@ -36,6 +54,8 @@ namespace DotNetLibrary.Utility
 
         public bool SetAt(int i, object obj)
         {
+            if (_initiated) return false;
+
             if (obj.GetType() == _type)
             {
                 _objects[i] = obj;
@@ -45,14 +65,15 @@ namespace DotNetLibrary.Utility
                 return false;
         }
 
-        public void RemoveAt(int i)
+        public object GetAt(int i)
         {
-            _objects.RemoveAt(i);
+            return _objects[i];
         }
 
-        public object this[int i]
+        public void RemoveAt(int i)
         {
-            get { return _objects[i]; }
+            if (_initiated) return;
+            _objects.RemoveAt(i);
         }
     }
 }

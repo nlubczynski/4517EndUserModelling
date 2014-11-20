@@ -1,5 +1,5 @@
 ﻿using DotNetLibrary;
-
+using DotNetLibrary.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,10 @@ namespace TestingApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             Controller view = new Controller();
-            Application.Run(view.MainView);
+            //Application.Run(view.MainView);
+            GameBoard board = new GameBoard();
+            Application.Run(board);
+
         }
     }
 }

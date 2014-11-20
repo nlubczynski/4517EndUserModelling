@@ -10,5 +10,14 @@ namespace DotNetLibrary.Models
     [ClassInterface(ClassInterfaceType.AutoDual)]
     public class Job
     {
+        public string Name { get; set; }
+        public bool DegreeRequired { get; set; }
+
+        public Job()
+        {
+            Name = "NoJob";
+            DegreeRequired = false;
+        }
+ 
     }
 }
