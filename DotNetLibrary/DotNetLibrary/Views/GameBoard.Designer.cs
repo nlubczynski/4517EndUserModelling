@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBoard));
             this.background = new System.Windows.Forms.PictureBox();
             this.spinnerImage = new System.Windows.Forms.PictureBox();
             this.spinLabel = new System.Windows.Forms.Label();
             this.controlBox = new System.Windows.Forms.GroupBox();
+            this.moneyLabel = new System.Windows.Forms.Label();
+            this.stockButton = new System.Windows.Forms.Button();
+            this.houseButton = new System.Windows.Forms.Button();
             this.profilePicture = new System.Windows.Forms.PictureBox();
             this.spinOutput = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
@@ -78,6 +82,9 @@
             // controlBox
             // 
             this.controlBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
+            this.controlBox.Controls.Add(this.moneyLabel);
+            this.controlBox.Controls.Add(this.stockButton);
+            this.controlBox.Controls.Add(this.houseButton);
             this.controlBox.Controls.Add(this.profilePicture);
             this.controlBox.Controls.Add(this.spinOutput);
             this.controlBox.Controls.Add(this.spinLabel);
@@ -92,11 +99,50 @@
             this.controlBox.TabStop = false;
             this.controlBox.Text = "<UserName>";
             // 
+            // moneyLabel
+            // 
+            this.moneyLabel.AutoSize = true;
+            this.moneyLabel.Location = new System.Drawing.Point(8, 352);
+            this.moneyLabel.Name = "moneyLabel";
+            this.moneyLabel.Size = new System.Drawing.Size(29, 31);
+            this.moneyLabel.TabIndex = 5;
+            this.moneyLabel.Text = "$";
+            // 
+            // stockButton
+            // 
+            this.stockButton.BackColor = System.Drawing.Color.Transparent;
+            this.stockButton.Enabled = false;
+            this.stockButton.FlatAppearance.BorderSize = 0;
+            this.stockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stockButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(8)))), ((int)(((byte)(136)))));
+            this.stockButton.Image = ((System.Drawing.Image)(resources.GetObject("stockButton.Image")));
+            this.stockButton.Location = new System.Drawing.Point(128, 288);
+            this.stockButton.Name = "stockButton";
+            this.stockButton.Size = new System.Drawing.Size(120, 50);
+            this.stockButton.TabIndex = 4;
+            this.stockButton.UseVisualStyleBackColor = false;
+            this.stockButton.Click += new System.EventHandler(this.stockButton_Click);
+            // 
+            // houseButton
+            // 
+            this.houseButton.BackColor = System.Drawing.Color.Transparent;
+            this.houseButton.Enabled = false;
+            this.houseButton.FlatAppearance.BorderSize = 0;
+            this.houseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.houseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(8)))), ((int)(((byte)(136)))));
+            this.houseButton.Image = ((System.Drawing.Image)(resources.GetObject("houseButton.Image")));
+            this.houseButton.Location = new System.Drawing.Point(8, 288);
+            this.houseButton.Name = "houseButton";
+            this.houseButton.Size = new System.Drawing.Size(120, 50);
+            this.houseButton.TabIndex = 3;
+            this.houseButton.UseVisualStyleBackColor = false;
+            // 
             // profilePicture
             // 
             this.profilePicture.Location = new System.Drawing.Point(8, 42);
             this.profilePicture.Name = "profilePicture";
             this.profilePicture.Size = new System.Drawing.Size(240, 240);
+            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.profilePicture.TabIndex = 2;
             this.profilePicture.TabStop = false;
             // 
@@ -137,6 +183,9 @@
         private System.Windows.Forms.GroupBox controlBox;
         private System.Windows.Forms.PictureBox profilePicture;
         private System.Windows.Forms.Label spinOutput;
+        private System.Windows.Forms.Button houseButton;
+        private System.Windows.Forms.Button stockButton;
+        private System.Windows.Forms.Label moneyLabel;
 
     }
 }

@@ -136,6 +136,18 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\stock_none.png" />
+    <None Include="Resources\stock_two.png" />
+    <None Include="Resources\stock_three.png" />
+    <None Include="Resources\stock_six.png" />
+    <None Include="Resources\stock_seven.png" />
+    <None Include="Resources\stock_one.png" />
+    <None Include="Resources\stock_nine.png" />
+    <None Include="Resources\stock_four.png" />
+    <None Include="Resources\stock_five.png" />
+    <None Include="Resources\stock_eight.png" />
+    <None Include="Resources\house_purchased.png" />
+    <None Include="Resources\house_not_purchased.png" />
     <Content Include="Resources\SpinnerStrip.png" />
     <None Include="Resources\triangle.png" />
     <None Include="Resources\Male.png" />

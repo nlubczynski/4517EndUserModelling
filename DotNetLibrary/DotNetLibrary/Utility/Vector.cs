@@ -41,7 +41,7 @@ namespace DotNetLibrary.Utility
 
         public bool AddObject(object obj)
         {
-            if (_initiated) return false;
+            if (!_initiated) return false;
 
             if (obj.GetType() == _type)
             {
@@ -54,7 +54,7 @@ namespace DotNetLibrary.Utility
 
         public bool SetAt(int i, object obj)
         {
-            if (_initiated) return false;
+            if (!_initiated) return false;
 
             if (obj.GetType() == _type)
             {
@@ -65,6 +65,11 @@ namespace DotNetLibrary.Utility
                 return false;
         }
 
+        public int size()
+        {
+            return _objects.Count;
+        }
+
         public object GetAt(int i)
         {
             return _objects[i];
@@ -72,7 +77,7 @@ namespace DotNetLibrary.Utility
 
         public void RemoveAt(int i)
         {
-            if (_initiated) return;
+            if (!_initiated) return;
             _objects.RemoveAt(i);
         }
     }

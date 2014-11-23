@@ -4,21 +4,23 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DotNetLibrary.Views
 {
+    [ClassInterface(ClassInterfaceType.AutoDual)]
     public partial class GameBoard : Form
     {
         // image vars
-        static private int NUMBER_OF_FRAMES = 28;
-        static private int HEIGHT = 400;
-        static private int WIDTH = 350;
+        const int NUMBER_OF_FRAMES = 28;
+        const int HEIGHT = 400;
+        const int WIDTH = 350;
         private Image[] sprites = new Image[NUMBER_OF_FRAMES];
         int currentImage;
-        private int[] frameToRoll = { 
+        private static int[] frameToRoll = { 
                                         4, 4,
                                         3, 3, 3, 
                                         2, 2, 2, 
@@ -34,6 +36,14 @@ namespace DotNetLibrary.Views
         Timer timer;
         int randomSpinDuration;
         Random RNGesus;
+
+        const int COST_OF_STOCK = 50000;
+
+        public bool StockEnabled
+        {
+            get { return stockButton.Enabled; }
+            set { stockButton.Enabled = value; }
+        }
 
         public GameBoard()
         {
@@ -95,8 +105,53 @@ namespace DotNetLibrary.Views
 
         public void setUser(Models.User user)
         {
+            // set up values
             controlBox.Text = user.Name;
             profilePicture.Image = user.Image;
+            moneyLabel.Text = String.Format("{0:C}", user.Money);
+
+            // set up conditionals
+            if(user.Money >= COST_OF_STOCK)
+            {
+                StockEnabled = true;
+            }
+        }
+
+        public void setStock(Stock stock)
+        {
+            switch (stock)
+            {
+                case Stock.ONE:
+                    stockButton.Image = Properties.Resources.stock_one;
+                    break;
+                case Stock.TWO:
+                    stockButton.Image = Properties.Resources.stock_two;
+                    break;
+                case Stock.THREE:
+                    stockButton.Image = Properties.Resources.stock_three;
+                    break;
+                case Stock.FOUR:
+                    stockButton.Image = Properties.Resources.stock_four;
+                    break;
+                case Stock.FIVE:
+                    stockButton.Image = Properties.Resources.stock_five;
+                    break;
+                case Stock.SIX:
+                    stockButton.Image = Properties.Resources.stock_six;
+                    break;
+                case Stock.SEVEN:
+                    stockButton.Image = Properties.Resources.stock_seven;
+                    break;
+                case Stock.EIGHT:
+                    stockButton.Image = Properties.Resources.stock_eight;
+                    break;
+                case Stock.NINE:
+                    stockButton.Image = Properties.Resources.stock_nine;
+                    break;
+                default:
+                    stockButton.Image = Properties.Resources.stock_none;
+                    break;
+            }
         }
 
         private void spinnerImage_Click(object sender, EventArgs e)
@@ -109,6 +164,16 @@ namespace DotNetLibrary.Views
 
                 spinOutput.Text = "";
             }
+
+            
+        }
+
+        public event EventHandler StockButtonClicked;
+
+        private void stockButton_Click(object sender, EventArgs e)
+        {
+            EventHandler handler = StockButtonClicked;
+            if (null != handler) handler(this, EventArgs.Empty);
         }
     }
 }
