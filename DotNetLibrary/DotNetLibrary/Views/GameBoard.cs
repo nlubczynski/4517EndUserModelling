@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DotNetLibrary.Models;
 
 namespace DotNetLibrary.Views
 {
@@ -152,6 +153,8 @@ namespace DotNetLibrary.Views
             }
 
             this.TurnEnabled = true;
+
+            Controller.updateGameBoard(user, this);
         }
 
         public void setStock(Stock stock)
@@ -216,6 +219,24 @@ namespace DotNetLibrary.Views
         private void stockButton_Click(object sender, EventArgs e)
         {
             if (null != StockButtonClicked) StockButtonClicked(this, e);
+        }
+
+        public void updateCurrentTile(Tile currentTile)
+        {
+            lblCurrentTileName.Text = currentTile.Name;
+            lblCurrentTileType.Text = currentTile.Description;
+        }
+
+        public void updateNextTile(Tile nextTile)
+        {
+            lblNextTileOneName.Text = nextTile.Name;
+            lblNextTileOneType.Text = nextTile.Description;
+        }
+
+        public void updateNextNextTile(Tile nextNextTile)
+        {
+            lblNextTileTwoName.Text = nextNextTile.Name;
+            lblNextTileTwoType.Text = nextNextTile.Description;
         }
     }
 }
