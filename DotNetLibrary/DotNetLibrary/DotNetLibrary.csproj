@@ -76,6 +76,9 @@
     <Compile Include="Communication\Controller.cs" />
     <Compile Include="Models\LifeTile.cs" />
     <Compile Include="Models\Tile.cs" />
+    <Compile Include="Utility\VectorLifeTile.cs" />
+    <Compile Include="Utility\VectorJob.cs" />
+    <Compile Include="Utility\VectorHouse.cs" />
     <Compile Include="Utility\Vector.cs" />
     <Compile Include="Views\GameBoard.cs">
       <SubType>Form</SubType>
