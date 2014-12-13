@@ -33,7 +33,8 @@
             this.spinnerImage = new System.Windows.Forms.PictureBox();
             this.spinLabel = new System.Windows.Forms.Label();
             this.controlBox = new System.Windows.Forms.GroupBox();
-            this.moneyLabel = new System.Windows.Forms.Label();
+            this.moneyOutput = new System.Windows.Forms.Label();
+            this.careerOutput = new System.Windows.Forms.Label();
             this.stockButton = new System.Windows.Forms.Button();
             this.houseButton = new System.Windows.Forms.Button();
             this.profilePicture = new System.Windows.Forms.PictureBox();
@@ -73,7 +74,7 @@
             // spinLabel
             // 
             this.spinLabel.AutoSize = true;
-            this.spinLabel.Location = new System.Drawing.Point(6, 396);
+            this.spinLabel.Location = new System.Drawing.Point(8, 396);
             this.spinLabel.Name = "spinLabel";
             this.spinLabel.Size = new System.Drawing.Size(79, 31);
             this.spinLabel.TabIndex = 0;
@@ -82,12 +83,13 @@
             // controlBox
             // 
             this.controlBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
-            this.controlBox.Controls.Add(this.moneyLabel);
+            this.controlBox.Controls.Add(this.spinLabel);
+            this.controlBox.Controls.Add(this.moneyOutput);
+            this.controlBox.Controls.Add(this.careerOutput);
             this.controlBox.Controls.Add(this.stockButton);
             this.controlBox.Controls.Add(this.houseButton);
             this.controlBox.Controls.Add(this.profilePicture);
             this.controlBox.Controls.Add(this.spinOutput);
-            this.controlBox.Controls.Add(this.spinLabel);
             this.controlBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.controlBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.controlBox.Font = new System.Drawing.Font("Gadugi", 20.25F);
@@ -99,14 +101,23 @@
             this.controlBox.TabStop = false;
             this.controlBox.Text = "<UserName>";
             // 
-            // moneyLabel
+            // moneyOutput
             // 
-            this.moneyLabel.AutoSize = true;
-            this.moneyLabel.Location = new System.Drawing.Point(8, 352);
-            this.moneyLabel.Name = "moneyLabel";
-            this.moneyLabel.Size = new System.Drawing.Size(29, 31);
-            this.moneyLabel.TabIndex = 5;
-            this.moneyLabel.Text = "$";
+            this.moneyOutput.AutoSize = true;
+            this.moneyOutput.Location = new System.Drawing.Point(8, 353);
+            this.moneyOutput.Name = "moneyOutput";
+            this.moneyOutput.Size = new System.Drawing.Size(131, 31);
+            this.moneyOutput.TabIndex = 8;
+            this.moneyOutput.Text = "<money>";
+            // 
+            // careerOutput
+            // 
+            this.careerOutput.AutoSize = true;
+            this.careerOutput.Location = new System.Drawing.Point(8, 440);
+            this.careerOutput.Name = "careerOutput";
+            this.careerOutput.Size = new System.Drawing.Size(122, 31);
+            this.careerOutput.TabIndex = 7;
+            this.careerOutput.Text = "<career>";
             // 
             // stockButton
             // 
@@ -149,10 +160,11 @@
             // spinOutput
             // 
             this.spinOutput.AutoSize = true;
-            this.spinOutput.Location = new System.Drawing.Point(78, 396);
+            this.spinOutput.Location = new System.Drawing.Point(93, 396);
             this.spinOutput.Name = "spinOutput";
-            this.spinOutput.Size = new System.Drawing.Size(0, 31);
+            this.spinOutput.Size = new System.Drawing.Size(99, 31);
             this.spinOutput.TabIndex = 1;
+            this.spinOutput.Text = "<spin>";
             // 
             // GameBoard
             // 
@@ -185,7 +197,8 @@
         private System.Windows.Forms.Label spinOutput;
         private System.Windows.Forms.Button houseButton;
         private System.Windows.Forms.Button stockButton;
-        private System.Windows.Forms.Label moneyLabel;
+        private System.Windows.Forms.Label careerOutput;
+        private System.Windows.Forms.Label moneyOutput;
 
     }
 }

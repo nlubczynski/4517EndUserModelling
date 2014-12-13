@@ -21,20 +21,25 @@ namespace TestingApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             Controller view = new Controller();
-            Application.Run(view.MainView);
+           // Application.Run(view.MainView);
 
-            DotNetLibrary.Utility.Vector vec = view.getPlayerVector();
+            //DotNetLibrary.Utility.Vector vec = view.getPlayerVector();
 
             GameBoard board = new GameBoard();
 
-            //DotNetLibrary.Models.User user = new DotNetLibrary.Models.User();
-            //user.setName("Nik");
-            //user.addMoney(1000);
-            //board.setUser(user);
-            //board.setStock(Stock.NINE);
-            //board.StockEnabled = true;
+            DotNetLibrary.Models.User user = new DotNetLibrary.Models.User();
 
-            //Application.Run(board);
+            DotNetLibrary.Models.Job job = new DotNetLibrary.Models.Job();
+            job.Name = "Software Engineer";
+
+            user.setName("Nik");
+            user.addMoney(1000);
+            user.setJob(job);
+            board.setUser(user);
+            board.setStock(Stock.NINE);
+            board.StockEnabled = true;
+
+            Application.Run(board);
 
         }
     }

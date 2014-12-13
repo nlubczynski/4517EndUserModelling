@@ -11,8 +11,22 @@ using System.Windows.Forms;
 
 namespace DotNetLibrary.Views
 {
-    [ClassInterface(ClassInterfaceType.AutoDual)]
-    public partial class GameBoard : Form
+
+    [Guid("EAA4976A-45C3-4BC5-BC0B-E474F4C3C83F")]
+    public interface ComClass1Interface
+    {
+    }
+
+    [Guid("7BD20046-DF8C-44A6-8F6B-687FAA26FA71"),
+        InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    public interface ComClass1Events
+    {
+    }
+
+    [Guid("0D53A3E8-E51A-49C7-944E-E72A2064F938"),
+        ClassInterface(ClassInterfaceType.AutoDual),
+        ComSourceInterfaces(typeof(ComClass1Events))]
+    public partial class GameBoard : Form, ComClass1Interface
     {
         // image vars
         const int NUMBER_OF_FRAMES = 28;
@@ -108,7 +122,13 @@ namespace DotNetLibrary.Views
             // set up values
             controlBox.Text = user.Name;
             profilePicture.Image = user.Image;
-            moneyLabel.Text = String.Format("{0:C}", user.Money);
+            moneyOutput.Text = String.Format("{0:C}", user.Money);
+            spinOutput.Text = "";
+
+            if (user.Job != null)
+            {
+                careerOutput.Text = user.Job.Name;
+            }
 
             // set up conditionals
             if(user.Money >= COST_OF_STOCK)
@@ -163,9 +183,7 @@ namespace DotNetLibrary.Views
                 timer.Start();
 
                 spinOutput.Text = "";
-            }
-
-            
+            }            
         }
 
         public event EventHandler StockButtonClicked;

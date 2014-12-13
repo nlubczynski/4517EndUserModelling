@@ -2,7 +2,6 @@ D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\x64\Release\T
 D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\x64\Release\TestingApp.exe
 D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\x64\Release\TestingApp.pdb
 D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\x64\Release\DotNetLibrary.dll
-D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\x64\Release\DotNetLibrary.pdb
 D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\x64\Release\TestingApp.csprojResolveAssemblyReference.cache
 D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\x64\Release\TestingApp.Properties.Resources.resources
 D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\obj\x64\Release\TestingApp.csproj.GenerateResource.Cache
@@ -18,3 +17,4 @@ C:\Users\NikLubz\Source\Repos\EUM\DotNetLibrary\TestingApp\obj\x64\Release\Testi
 C:\Users\NikLubz\Source\Repos\EUM\DotNetLibrary\TestingApp\obj\x64\Release\TestingApp.csproj.GenerateResource.Cache
 C:\Users\NikLubz\Source\Repos\EUM\DotNetLibrary\TestingApp\obj\x64\Release\TestingApp.exe
 C:\Users\NikLubz\Source\Repos\EUM\DotNetLibrary\TestingApp\obj\x64\Release\TestingApp.pdb
+D:\Users\Niklas\SourceControl\GIT\EUM\DotNetLibrary\TestingApp\bin\x64\Release\DotNetLibrary.pdb
