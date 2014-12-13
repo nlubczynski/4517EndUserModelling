@@ -16,6 +16,8 @@ namespace DotNetLibrary.Views
     {
         [DispId(1)]
         void StockButtonClicked(object sender, EventArgs e);
+        [DispId(2)]
+        void RollEnded(object sender, EventArgs roll);
     }    
 
     [ClassInterface(ClassInterfaceType.AutoDual),
@@ -24,6 +26,7 @@ namespace DotNetLibrary.Views
     {
         // event
         public event EventHandler StockButtonClicked;
+        public event EventHandler RollEnded;
 
         // image vars
         const int NUMBER_OF_FRAMES = 28;
@@ -57,6 +60,9 @@ namespace DotNetLibrary.Views
             get { return stockButton.Enabled; }
             set { stockButton.Enabled = value; }
         }
+
+        public bool TurnEnabled { get; private set; }
+        public int Roll { get; private set; }
 
         public GameBoard()
         {
@@ -107,6 +113,11 @@ namespace DotNetLibrary.Views
                 {
                     timer.Stop();
                     setRoll(frameToRoll[currentImage]);
+                    if (null != RollEnded)
+                    {
+                        this.Roll = frameToRoll[currentImage];
+                        RollEnded(this, e);
+                    }
                 }
             }
         }
@@ -123,6 +134,7 @@ namespace DotNetLibrary.Views
             profilePicture.Image = user.Image;
             moneyOutput.Text = String.Format("{0:C}", user.Money);
             spinOutput.Text = "";
+            this.Roll = 0;
 
             if (user.Job != null)
             {
@@ -137,7 +149,9 @@ namespace DotNetLibrary.Views
             if(user.Money >= COST_OF_STOCK)
             {
                 StockEnabled = true;
-            }                    
+            }
+
+            this.TurnEnabled = true;
         }
 
         public void setStock(Stock stock)
@@ -179,6 +193,16 @@ namespace DotNetLibrary.Views
 
         private void spinnerImage_Click(object sender, EventArgs e)
         {
+            if(this.TurnEnabled)
+            {
+                this.TurnEnabled = false;
+                StockEnabled = false;
+            }
+            else
+            {
+                return;
+            }
+
             if(timer.Enabled == false)
             {
                 randomSpinDuration = RNGesus.Next(100, 300);

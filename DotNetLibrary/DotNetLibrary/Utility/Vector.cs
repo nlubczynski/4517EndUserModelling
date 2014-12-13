@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DotNetLibrary.Utility
 {
@@ -12,38 +13,15 @@ namespace DotNetLibrary.Utility
     public class Vector
     {
         private ArrayList   _objects;
-        private Type        _type;
-        private bool        _initiated;
-
-        public Vector(Type type)
-        {
-            // Store the type
-            _type = type;
-
-            // Initiate the underlying array
-            _objects = new ArrayList();
-            _initiated = true;
-        }
 
         public Vector()
         {
-            _initiated = false;
-        }
-
-        public void setType(object type)
-        {
-            // Store the type
-            _type = type.GetType();
-
-            // Initiate the underlying array
-            _initiated = true;
+            _objects = new ArrayList();
         }
 
         public bool AddObject(object obj)
         {
-            if (!_initiated) return false;
-
-            if (obj.GetType() == _type)
+            if (obj != null)
             {
                 _objects.Add(obj);
                 return true;
@@ -54,9 +32,7 @@ namespace DotNetLibrary.Utility
 
         public bool SetAt(int i, object obj)
         {
-            if (!_initiated) return false;
-
-            if (obj.GetType() == _type)
+            if (obj != null)
             {
                 _objects[i] = obj;
                 return true;
@@ -77,7 +53,6 @@ namespace DotNetLibrary.Utility
 
         public void RemoveAt(int i)
         {
-            if (!_initiated) return;
             _objects.RemoveAt(i);
         }
     }
