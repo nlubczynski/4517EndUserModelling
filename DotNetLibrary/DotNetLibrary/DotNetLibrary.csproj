@@ -82,6 +82,12 @@
     <Compile Include="Utility\VectorSalary.cs" />
     <Compile Include="Utility\VectorTile.cs" />
     <Compile Include="Utility\VectorUser.cs" />
+    <Compile Include="Views\ChooseJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChooseJob.Designer.cs">
+      <DependentUpon>ChooseJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\GameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\ChooseJob.resx">
+      <DependentUpon>ChooseJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\GameBoard.resx">
       <DependentUpon>GameBoard.cs</DependentUpon>
     </EmbeddedResource>
