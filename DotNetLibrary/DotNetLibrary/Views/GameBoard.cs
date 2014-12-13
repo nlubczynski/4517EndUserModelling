@@ -11,23 +11,20 @@ using System.Windows.Forms;
 
 namespace DotNetLibrary.Views
 {
-
-    [Guid("EAA4976A-45C3-4BC5-BC0B-E474F4C3C83F")]
-    public interface ComClass1Interface
+    [InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    public interface GameBoardEvents
     {
-    }
+        [DispId(1)]
+        void StockButtonClicked(object sender, EventArgs e);
+    }    
 
-    [Guid("7BD20046-DF8C-44A6-8F6B-687FAA26FA71"),
-        InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
-    public interface ComClass1Events
+    [ClassInterface(ClassInterfaceType.AutoDual),
+        ComSourceInterfaces(typeof(GameBoardEvents))]
+    public partial class GameBoard : Form
     {
-    }
+        // event
+        public event EventHandler StockButtonClicked;
 
-    [Guid("0D53A3E8-E51A-49C7-944E-E72A2064F938"),
-        ClassInterface(ClassInterfaceType.AutoDual),
-        ComSourceInterfaces(typeof(ComClass1Events))]
-    public partial class GameBoard : Form, ComClass1Interface
-    {
         // image vars
         const int NUMBER_OF_FRAMES = 28;
         const int HEIGHT = 400;
@@ -51,8 +48,10 @@ namespace DotNetLibrary.Views
         int randomSpinDuration;
         Random RNGesus;
 
+        // Constants
         const int COST_OF_STOCK = 50000;
 
+        // Properties
         public bool StockEnabled
         {
             get { return stockButton.Enabled; }
@@ -129,12 +128,16 @@ namespace DotNetLibrary.Views
             {
                 careerOutput.Text = user.Job.Name;
             }
+            else
+            {
+                careerOutput.Text = "";
+            }
 
             // set up conditionals
             if(user.Money >= COST_OF_STOCK)
             {
                 StockEnabled = true;
-            }
+            }                    
         }
 
         public void setStock(Stock stock)
@@ -186,12 +189,9 @@ namespace DotNetLibrary.Views
             }            
         }
 
-        public event EventHandler StockButtonClicked;
-
         private void stockButton_Click(object sender, EventArgs e)
         {
-            EventHandler handler = StockButtonClicked;
-            if (null != handler) handler(this, EventArgs.Empty);
+            if (null != StockButtonClicked) StockButtonClicked(this, e);
         }
     }
 }
