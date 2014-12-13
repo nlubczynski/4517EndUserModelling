@@ -36,9 +36,9 @@ namespace DotNetLibrary
             return players.ToArray(typeof(Models.User)) as Models.User[];
         }
 
-        public Utility.Vector getPlayerVector()
+        public Utility.VectorUser getPlayerVector()
         {
-            Utility.Vector returnVal = new Utility.Vector(typeof(Models.User));
+            Utility.VectorUser returnVal = new Utility.VectorUser();
 
             foreach(Models.User user in players)
             {

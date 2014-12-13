@@ -79,7 +79,6 @@
     <Compile Include="Utility\VectorLifeTile.cs" />
     <Compile Include="Utility\VectorJob.cs" />
     <Compile Include="Utility\VectorHouse.cs" />
-    <Compile Include="Utility\Vector.cs" />
     <Compile Include="Utility\VectorSalary.cs" />
     <Compile Include="Utility\VectorTile.cs" />
     <Compile Include="Utility\VectorUser.cs" />

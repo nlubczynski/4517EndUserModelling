@@ -15,15 +15,15 @@ namespace DotNetLibrary.Models
         public string Next_Function { get; set; }
         public string Land_Function { get; set; }
         
-        private Utility.Vector _neighbours;
-        public Utility.Vector Neighbours
+        private Utility.VectorTile _neighbours;
+        public Utility.VectorTile Neighbours
         {
             get { return _neighbours; }
         }
 
         public Tile()
         {
-            _neighbours = new Utility.Vector(typeof(Tile));
+            _neighbours = new Utility.VectorTile();
         }
 
         public bool addNeighbour(Tile tile)
