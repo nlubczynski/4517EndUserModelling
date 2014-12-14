@@ -25,8 +25,8 @@ namespace DotNetLibrary.Models
         public Utility.VectorLifeTile LifeTiles { get; private set; }
         public bool MissNextTurn { get; set; }
         public bool Retired { get; set; }
-
         public int NumberOfKids { get; set; }
+
         public User()
         {
             Name = "John Doe";

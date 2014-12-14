@@ -265,6 +265,12 @@ namespace DotNetLibrary.Views
             lblNextTileTwoName.Text = nextNextTile.Name;
             lblNextTileTwoType.Text = nextNextTile.Description;
         }
+
+        public int getStartingRoll()
+        {
+            return frameToRoll[currentImage];
+        }
+
         public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll)
         {
             if(roll > 0)
