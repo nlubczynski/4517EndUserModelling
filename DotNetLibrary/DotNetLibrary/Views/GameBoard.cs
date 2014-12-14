@@ -24,6 +24,8 @@ namespace DotNetLibrary.Views
         void MoveEnded(object sender, EventArgs args);
         [DispId(4)]
         void SkippedTurnMoveEnded(object sender, EventArgs args);
+        [DispId(5)]
+        void RetiredUserMoveEnd(object sender, EventArgs args);
     }    
 
     [ClassInterface(ClassInterfaceType.AutoDual),
@@ -35,7 +37,7 @@ namespace DotNetLibrary.Views
         public event EventHandler RollEnded;
         public event EventHandler MoveEnded;
         public event EventHandler SkippedTurnMoveEnded;
-
+        public event EventHandler RetiredUserMoveEnd;
         // image vars
         const int NUMBER_OF_FRAMES = 28;
         const int HEIGHT = 400;
@@ -291,11 +293,18 @@ namespace DotNetLibrary.Views
         {
             if (currentTile.Name == "RETIRE")
             {
+                //update Current Tile
+                this.updateCurrentTile(currentTile);
+                this.updateNextTile(currentTile.Neighbours.GetAt(0));
+                this.updateNextNextTile(currentTile.Neighbours.GetAt(1));
+
                 MessageBox.Show("Welcome To Retirement! Here is your pension!", "Retired!", MessageBoxButtons.OK, MessageBoxIcon.None);
-                currentUser.addMoney(currentUser.Salary.Wage*.5);
-                //MoveEnded(this, new EventArgs());
-            }    
-                
+                currentUser.addMoney(currentUser.Salary.Wage * .5);
+
+                if (RetiredUserMoveEnd != null) RetiredUserMoveEnd(this, new EventArgs());
+                return;
+            }
+               
             //sync money output
             moneyOutput.Text = userMoneyVisual.ToString("C");
 
@@ -304,37 +313,20 @@ namespace DotNetLibrary.Views
 
             setStock(currentUser.Stock);
 
-            Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
+            Tile nextTile;
 
             //if there is a second option and alternate Path is chosen next tile is that tile
             if (currentTile.Neighbours.size() > 1 && alternatePath)
                 nextTile = (Tile) currentTile.Neighbours.GetAt(1);
+            else
+                nextTile = (Tile)currentTile.Neighbours.GetAt(0);
 
             spinOutput.Text = roll.ToString();
-
-            Tile nextNextTile;
-
-            //moneyOutput.Text = String.Format("{0:C}", currentUser.Money);
-
-            if (currentTile.Neighbours.size() > 1)
-            {
-                //update labels
-                lblNextOne.Text = "Road Split!";
-                lblNextTwo.Text = "Road Split!";
-                nextNextTile = (Tile)currentTile.Neighbours.GetAt(1);
-            }
-            else
-            {
-                //update labels
-                lblNextOne.Text = "Next Tile";
-                lblNextTwo.Text = "Next Tile";
-                nextNextTile = (Tile)nextTile.Neighbours.GetAt(0);
-            }
 
             //update Current Tile
             this.updateCurrentTile(currentTile);
             this.updateNextTile(nextTile);
-            this.updateNextNextTile(nextNextTile);
+            this.updateNextNextTile(nextTile.Neighbours.GetAt(0));
 
             if (lastTile != null && currentTile != lastTile)
             {
