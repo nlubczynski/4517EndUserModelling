@@ -133,6 +133,15 @@ namespace DotNetLibrary.Views
 
         public void setUser(Models.User user)
         {
+
+            if(user.MissNextTurn)
+            {
+                user.MissNextTurn = false;
+
+                MessageBox.Show("Sorry, " + user.Name + ", but you miss this turn.", "Missed Turn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
             // set up values
             controlBox.Text = user.Name;
             profilePicture.Image = user.Image;

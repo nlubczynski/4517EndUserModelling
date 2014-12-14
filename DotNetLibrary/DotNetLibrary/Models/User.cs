@@ -23,6 +23,7 @@ namespace DotNetLibrary.Models
         public Stock Stock { get; set; }
         public Image Image { get; set; }
         public Utility.VectorLifeTile LifeTiles { get; private set; }
+        public bool MissNextTurn { get; set; }
 
         public User()
         {
