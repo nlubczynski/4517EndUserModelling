@@ -142,42 +142,7 @@ namespace DotNetLibrary.Views
                 return;
             }
 
-            // set up values
-            controlBox.Text = user.Name;
-            profilePicture.Image = user.Image;
-            moneyOutput.Text = String.Format("{0:C}", user.Money);
-            spinOutput.Text = "";
-            this.Roll = 0;
-
-            switch(user.Gender)
-            {
-                case Gender.ALIEN:
-                    drivingGif.Image = Properties.Resources.alienGiphy;
-                    break;
-
-                case Gender.FEMALE:
-                    drivingGif.Image = Properties.Resources.girlGiphy;
-                    break;
-
-                case Gender.MALE:
-                    drivingGif.Image = Properties.Resources.giphy;
-                    break;
-            }
-
-            if (user.Job != null)
-            {
-                careerOutput.Text = user.Job.Name;
-            }
-            else
-            {
-                careerOutput.Text = "";
-            }
-
-            // set up conditionals
-            if(user.Money >= COST_OF_STOCK)
-            {
-                StockEnabled = true;
-            }
+            updateUI(user);
 
             this.TurnEnabled = true;
 
@@ -271,10 +236,53 @@ namespace DotNetLibrary.Views
             return frameToRoll[currentImage];
         }
 
+        public void updateUI(User user)
+        {
+            controlBox.Text = user.Name;
+            profilePicture.Image = user.Image;
+            moneyOutput.Text = String.Format("{0:C}", user.Money);
+            spinOutput.Text = "";
+            this.Roll = 0;
+
+            switch (user.Gender)
+            {
+                case Gender.ALIEN:
+                    drivingGif.Image = Properties.Resources.alienGiphy;
+                    break;
+
+                case Gender.FEMALE:
+                    drivingGif.Image = Properties.Resources.girlGiphy;
+                    break;
+
+                case Gender.MALE:
+                    drivingGif.Image = Properties.Resources.giphy;
+                    break;
+            }
+
+            if (user.Job != null)
+            {
+                careerOutput.Text = user.Job.Name;
+            }
+            else
+            {
+                careerOutput.Text = "";
+            }
+
+            // set up conditionals
+            if (user.Money >= COST_OF_STOCK)
+            {
+                StockEnabled = true;
+            }
+
+            setStock(user.Stock);
+        }
+
         public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll)
         {
             if(roll > 0)
                 drivingGif.Enabled = true;
+
+            setStock(currentUser.Stock);
 
             Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
 
@@ -306,10 +314,17 @@ namespace DotNetLibrary.Views
                     Invoke(new Action(delegate { this.moveUserUpdate(currentUser, nextUser, currentTile.Neighbours.GetAt(0), lastTile, --roll);}));
                 });
             }
-            else if(nextUser != null)
+            else if (lastTile != null && currentTile == lastTile)
             {
-                this.setUser(nextUser);
-                drivingGif.Enabled = false;                
+                ThreadPool.QueueUserWorkItem(delegate
+                {
+                    Thread.Sleep(1500);
+                    if (nextUser != null)
+                    {
+                        this.setUser(nextUser);
+                        drivingGif.Enabled = false;
+                    }
+                });                
             }
         }
     }
