@@ -155,7 +155,7 @@ namespace DotNetLibrary.Views
 
             this.TurnEnabled = true;
 
-            this.moveUserUpdate(user, null, user.CurrentTile, null, this.Roll);
+            this.moveUserUpdate(user, null, user.CurrentTile, null, this.Roll, false, user.Money);
         }
 
         public void setStock(Stock stock)
@@ -286,8 +286,19 @@ namespace DotNetLibrary.Views
             setStock(user.Stock);
         }
 
-        public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll, bool alternatePath = false)
+        public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll,
+            bool alternatePath, double userMoneyVisual, bool rollStart = true)
         {
+            if (currentTile.Name == "RETIRE")
+            {
+                MessageBox.Show("Welcome To Retirement! Here is your pension!", "Retired!", MessageBoxButtons.OK, MessageBoxIcon.None);
+                currentUser.addMoney(currentUser.Salary.Wage*.5);
+                //MoveEnded(this, new EventArgs());
+            }    
+                
+            //sync money output
+            moneyOutput.Text = userMoneyVisual.ToString("C");
+
             if(roll > 0)
                 drivingGif.Enabled = true;
 
@@ -303,7 +314,7 @@ namespace DotNetLibrary.Views
 
             Tile nextNextTile;
 
-            moneyOutput.Text = String.Format("{0:C}", currentUser.Money);
+            //moneyOutput.Text = String.Format("{0:C}", currentUser.Money);
 
             if (currentTile.Neighbours.size() > 1)
             {
@@ -329,8 +340,13 @@ namespace DotNetLibrary.Views
             {
                 ThreadPool.QueueUserWorkItem(delegate
                 {
+                    if (currentTile.Name == "Pay Day" && !rollStart)
+                    {
+                        userMoneyVisual += currentUser.Salary.Wage;
+                        moneyOutput.Text = userMoneyVisual.ToString("C");
+                    }
                     Thread.Sleep(750);
-                    Invoke(new Action(delegate { this.moveUserUpdate(currentUser, nextUser, nextTile, lastTile, --roll, alternatePath);}));
+                    Invoke(new Action(delegate { this.moveUserUpdate(currentUser, nextUser, nextTile, lastTile, --roll, alternatePath, userMoneyVisual, false);}));
                 });
             }
             else if (lastTile != null && currentTile == lastTile)
