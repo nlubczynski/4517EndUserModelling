@@ -155,7 +155,7 @@ namespace DotNetLibrary.Views
 
             this.TurnEnabled = true;
 
-            this.moveUserUpdate(user, user.CurrentTile, null, this.Roll);
+            this.moveUserUpdate(user, null, user.CurrentTile, null, this.Roll);
         }
 
         public void setStock(Stock stock)
@@ -239,7 +239,7 @@ namespace DotNetLibrary.Views
             lblNextTileTwoName.Text = nextNextTile.Name;
             lblNextTileTwoType.Text = nextNextTile.Description;
         }
-        public void moveUserUpdate(User currentUser, Tile currentTile, Tile lastTile, int roll)
+        public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll)
         {
             Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
 
@@ -268,8 +268,12 @@ namespace DotNetLibrary.Views
                 ThreadPool.QueueUserWorkItem(delegate
                 {
                     Thread.Sleep(750);
-                    Invoke(new Action(delegate { this.moveUserUpdate(currentUser, currentTile.Neighbours.GetAt(0), lastTile, --roll);}));
+                    Invoke(new Action(delegate { this.moveUserUpdate(currentUser, nextUser, currentTile.Neighbours.GetAt(0), lastTile, --roll);}));
                 });
+            }
+            else if(nextUser != null)
+            {
+                this.setUser(nextUser);
             }
         }
     }
