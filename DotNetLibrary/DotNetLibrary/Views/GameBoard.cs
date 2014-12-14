@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DotNetLibrary.Models;
+using System.Threading;
 
 namespace DotNetLibrary.Views
 {
@@ -48,7 +49,7 @@ namespace DotNetLibrary.Views
                                         5, 5, 5 };
 
         // timer vars
-        Timer timer;
+        System.Windows.Forms.Timer timer;
         int randomSpinDuration;
         Random RNGesus;
 
@@ -70,7 +71,7 @@ namespace DotNetLibrary.Views
             InitializeComponent();
 
             // Set up timer for spinning
-            timer = new Timer();
+            timer = new System.Windows.Forms.Timer();
             timer.Tick += timer_Tick;
             RNGesus = new Random();
 
@@ -154,7 +155,7 @@ namespace DotNetLibrary.Views
 
             this.TurnEnabled = true;
 
-            this.moveUserUpdate(user, this.Roll);
+            this.moveUserUpdate(user, user.CurrentTile, null, this.Roll);
         }
 
         public void setStock(Stock stock)
@@ -238,9 +239,8 @@ namespace DotNetLibrary.Views
             lblNextTileTwoName.Text = nextNextTile.Name;
             lblNextTileTwoType.Text = nextNextTile.Description;
         }
-        public void moveUserUpdate(User currentUser, int roll)
+        public void moveUserUpdate(User currentUser, Tile currentTile, Tile lastTile, int roll)
         {
-            Tile currentTile = currentUser.CurrentTile;
             Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
 
             spinOutput.Text = roll.ToString();
@@ -262,7 +262,15 @@ namespace DotNetLibrary.Views
             this.updateCurrentTile(currentTile);
             this.updateNextTile(nextTile);
             this.updateNextNextTile(nextNextTile);
-        }
 
+            if (lastTile != null && currentTile != lastTile)
+            {
+                ThreadPool.QueueUserWorkItem(delegate
+                {
+                    Thread.Sleep(750);
+                    Invoke(new Action(delegate { this.moveUserUpdate(currentUser, currentTile.Neighbours.GetAt(0), lastTile, --roll);}));
+                });
+            }
+        }
     }
 }
