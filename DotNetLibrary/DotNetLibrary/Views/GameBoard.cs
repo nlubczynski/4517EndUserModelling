@@ -154,7 +154,7 @@ namespace DotNetLibrary.Views
 
             this.TurnEnabled = true;
 
-            Controller.updateGameBoard(user, this);
+            this.moveUserUpdate(user);
         }
 
         public void setStock(Stock stock)
@@ -238,5 +238,28 @@ namespace DotNetLibrary.Views
             lblNextTileTwoName.Text = nextNextTile.Name;
             lblNextTileTwoType.Text = nextNextTile.Description;
         }
+        public void moveUserUpdate(User currentUser)
+        {
+            Tile currentTile = currentUser.CurrentTile;
+            Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
+
+            Tile nextNextTile;
+
+            if (currentTile.Neighbours.size() > 1)
+            {
+                nextNextTile = (Tile)currentTile.Neighbours.GetAt(1);
+            }
+            else
+            {
+                nextNextTile = (Tile)nextTile.Neighbours.GetAt(0);
+            }
+
+            //update Current Tile
+            this.updateCurrentTile(currentTile);
+            this.updateNextTile(nextTile);
+            this.updateNextNextTile(nextNextTile);
+
+        }
+
     }
 }

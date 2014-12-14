@@ -47,9 +47,9 @@ namespace DotNetLibrary.Utility
             return _objects.Count;
         }
 
-        public object GetAt(int i)
+        public Tile GetAt(int i)
         {
-            return _objects[i];
+            return (Tile)_objects[i];
         }
 
         public void RemoveAt(int i)

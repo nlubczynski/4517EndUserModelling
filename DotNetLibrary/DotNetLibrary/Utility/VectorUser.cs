@@ -49,7 +49,7 @@ namespace DotNetLibrary.Utility
 
         public object GetAt(int i)
         {
-            return _objects[i];
+            return (User)_objects[i];
         }
 
         public void RemoveAt(int i)
