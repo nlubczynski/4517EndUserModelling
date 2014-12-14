@@ -22,6 +22,8 @@ namespace DotNetLibrary.Views
         void RollEnded(object sender, EventArgs roll);
         [DispId(3)]
         void MoveEnded(object sender, EventArgs args);
+        [DispId(4)]
+        void SkippedTurnMoveEnded(object sender, EventArgs args);
     }    
 
     [ClassInterface(ClassInterfaceType.AutoDual),
@@ -32,6 +34,7 @@ namespace DotNetLibrary.Views
         public event EventHandler StockButtonClicked;
         public event EventHandler RollEnded;
         public event EventHandler MoveEnded;
+        public event EventHandler SkippedTurnMoveEnded;
 
         // image vars
         const int NUMBER_OF_FRAMES = 28;
@@ -140,8 +143,11 @@ namespace DotNetLibrary.Views
             if(user.MissNextTurn)
             {
                 user.MissNextTurn = false;
-
+                updateUI(user);
+               
                 MessageBox.Show("Sorry, " + user.Name + ", but you miss this turn.", "Missed Turn", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+
+                SkippedTurnMoveEnded(this, new EventArgs());
                 return;
             }
 
@@ -324,7 +330,7 @@ namespace DotNetLibrary.Views
                     Thread.Sleep(1500);
                     if (nextUser != null)
                     {
-                        this.setUser(nextUser);
+                        //this.setUser(nextUser);
                         drivingGif.Enabled = false;
                         if (MoveEnded != null) MoveEnded(this, new EventArgs());
                     }

@@ -33,6 +33,9 @@
             this.controlBox = new System.Windows.Forms.GroupBox();
             this.moneyOutput = new System.Windows.Forms.Label();
             this.careerOutput = new System.Windows.Forms.Label();
+            this.stockButton = new System.Windows.Forms.Button();
+            this.houseButton = new System.Windows.Forms.Button();
+            this.profilePicture = new System.Windows.Forms.PictureBox();
             this.spinOutput = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblCurrentTileType = new System.Windows.Forms.Label();
@@ -48,17 +51,14 @@
             this.lblNextTileTwoName = new System.Windows.Forms.Label();
             this.drivingGif = new System.Windows.Forms.PictureBox();
             this.spinnerImage = new System.Windows.Forms.PictureBox();
-            this.stockButton = new System.Windows.Forms.Button();
-            this.houseButton = new System.Windows.Forms.Button();
-            this.profilePicture = new System.Windows.Forms.PictureBox();
             this.background = new System.Windows.Forms.PictureBox();
             this.controlBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drivingGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +110,44 @@
             this.careerOutput.TabIndex = 7;
             this.careerOutput.Text = "<career>";
             // 
+            // stockButton
+            // 
+            this.stockButton.BackColor = System.Drawing.Color.Transparent;
+            this.stockButton.Enabled = false;
+            this.stockButton.FlatAppearance.BorderSize = 0;
+            this.stockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stockButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(8)))), ((int)(((byte)(136)))));
+            this.stockButton.Image = ((System.Drawing.Image)(resources.GetObject("stockButton.Image")));
+            this.stockButton.Location = new System.Drawing.Point(128, 288);
+            this.stockButton.Name = "stockButton";
+            this.stockButton.Size = new System.Drawing.Size(120, 50);
+            this.stockButton.TabIndex = 4;
+            this.stockButton.UseVisualStyleBackColor = false;
+            this.stockButton.Click += new System.EventHandler(this.stockButton_Click);
+            // 
+            // houseButton
+            // 
+            this.houseButton.BackColor = System.Drawing.Color.Transparent;
+            this.houseButton.Enabled = false;
+            this.houseButton.FlatAppearance.BorderSize = 0;
+            this.houseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.houseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(8)))), ((int)(((byte)(136)))));
+            this.houseButton.Image = ((System.Drawing.Image)(resources.GetObject("houseButton.Image")));
+            this.houseButton.Location = new System.Drawing.Point(8, 288);
+            this.houseButton.Name = "houseButton";
+            this.houseButton.Size = new System.Drawing.Size(120, 50);
+            this.houseButton.TabIndex = 3;
+            this.houseButton.UseVisualStyleBackColor = false;
+            // 
+            // profilePicture
+            // 
+            this.profilePicture.Location = new System.Drawing.Point(8, 42);
+            this.profilePicture.Name = "profilePicture";
+            this.profilePicture.Size = new System.Drawing.Size(240, 240);
+            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.profilePicture.TabIndex = 2;
+            this.profilePicture.TabStop = false;
+            // 
             // spinOutput
             // 
             this.spinOutput.AutoSize = true;
@@ -135,7 +173,8 @@
             // 
             this.lblCurrentTileType.AutoSize = true;
             this.lblCurrentTileType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentTileType.Location = new System.Drawing.Point(14, 119);
+            this.lblCurrentTileType.Location = new System.Drawing.Point(14, 141);
+            this.lblCurrentTileType.MaximumSize = new System.Drawing.Size(164, 200);
             this.lblCurrentTileType.Name = "lblCurrentTileType";
             this.lblCurrentTileType.Size = new System.Drawing.Size(89, 24);
             this.lblCurrentTileType.TabIndex = 2;
@@ -146,6 +185,7 @@
             this.lblCurrentTileName.AutoSize = true;
             this.lblCurrentTileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentTileName.Location = new System.Drawing.Point(14, 77);
+            this.lblCurrentTileName.MaximumSize = new System.Drawing.Size(164, 200);
             this.lblCurrentTileName.Name = "lblCurrentTileName";
             this.lblCurrentTileName.Size = new System.Drawing.Size(97, 24);
             this.lblCurrentTileName.TabIndex = 1;
@@ -188,7 +228,8 @@
             // 
             this.lblNextTileOneType.AutoSize = true;
             this.lblNextTileOneType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNextTileOneType.Location = new System.Drawing.Point(13, 96);
+            this.lblNextTileOneType.Location = new System.Drawing.Point(13, 111);
+            this.lblNextTileOneType.MaximumSize = new System.Drawing.Size(140, 50);
             this.lblNextTileOneType.Name = "lblNextTileOneType";
             this.lblNextTileOneType.Size = new System.Drawing.Size(67, 18);
             this.lblNextTileOneType.TabIndex = 4;
@@ -199,6 +240,7 @@
             this.lblNextTileOneName.AutoSize = true;
             this.lblNextTileOneName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNextTileOneName.Location = new System.Drawing.Point(13, 63);
+            this.lblNextTileOneName.MaximumSize = new System.Drawing.Size(140, 50);
             this.lblNextTileOneName.Name = "lblNextTileOneName";
             this.lblNextTileOneName.Size = new System.Drawing.Size(75, 18);
             this.lblNextTileOneName.TabIndex = 3;
@@ -230,7 +272,8 @@
             // 
             this.lblNextTileTwoType.AutoSize = true;
             this.lblNextTileTwoType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNextTileTwoType.Location = new System.Drawing.Point(13, 96);
+            this.lblNextTileTwoType.Location = new System.Drawing.Point(13, 111);
+            this.lblNextTileTwoType.MaximumSize = new System.Drawing.Size(140, 50);
             this.lblNextTileTwoType.Name = "lblNextTileTwoType";
             this.lblNextTileTwoType.Size = new System.Drawing.Size(67, 18);
             this.lblNextTileTwoType.TabIndex = 7;
@@ -241,6 +284,7 @@
             this.lblNextTileTwoName.AutoSize = true;
             this.lblNextTileTwoName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNextTileTwoName.Location = new System.Drawing.Point(13, 63);
+            this.lblNextTileTwoName.MaximumSize = new System.Drawing.Size(140, 50);
             this.lblNextTileTwoName.Name = "lblNextTileTwoName";
             this.lblNextTileTwoName.Size = new System.Drawing.Size(75, 18);
             this.lblNextTileTwoName.TabIndex = 6;
@@ -268,44 +312,6 @@
             this.spinnerImage.TabIndex = 2;
             this.spinnerImage.TabStop = false;
             this.spinnerImage.Click += new System.EventHandler(this.spinnerImage_Click);
-            // 
-            // stockButton
-            // 
-            this.stockButton.BackColor = System.Drawing.Color.Transparent;
-            this.stockButton.Enabled = false;
-            this.stockButton.FlatAppearance.BorderSize = 0;
-            this.stockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stockButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(8)))), ((int)(((byte)(136)))));
-            this.stockButton.Image = ((System.Drawing.Image)(resources.GetObject("stockButton.Image")));
-            this.stockButton.Location = new System.Drawing.Point(128, 288);
-            this.stockButton.Name = "stockButton";
-            this.stockButton.Size = new System.Drawing.Size(120, 50);
-            this.stockButton.TabIndex = 4;
-            this.stockButton.UseVisualStyleBackColor = false;
-            this.stockButton.Click += new System.EventHandler(this.stockButton_Click);
-            // 
-            // houseButton
-            // 
-            this.houseButton.BackColor = System.Drawing.Color.Transparent;
-            this.houseButton.Enabled = false;
-            this.houseButton.FlatAppearance.BorderSize = 0;
-            this.houseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.houseButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(8)))), ((int)(((byte)(136)))));
-            this.houseButton.Image = ((System.Drawing.Image)(resources.GetObject("houseButton.Image")));
-            this.houseButton.Location = new System.Drawing.Point(8, 288);
-            this.houseButton.Name = "houseButton";
-            this.houseButton.Size = new System.Drawing.Size(120, 50);
-            this.houseButton.TabIndex = 3;
-            this.houseButton.UseVisualStyleBackColor = false;
-            // 
-            // profilePicture
-            // 
-            this.profilePicture.Location = new System.Drawing.Point(8, 42);
-            this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(240, 240);
-            this.profilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.profilePicture.TabIndex = 2;
-            this.profilePicture.TabStop = false;
             // 
             // background
             // 
@@ -338,6 +344,7 @@
             this.Text = "Game of Life";
             this.controlBox.ResumeLayout(false);
             this.controlBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -346,7 +353,6 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drivingGif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
             this.ResumeLayout(false);
 
