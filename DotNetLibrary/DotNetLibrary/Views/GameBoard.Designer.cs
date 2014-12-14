@@ -34,19 +34,19 @@
             this.moneyOutput = new System.Windows.Forms.Label();
             this.careerOutput = new System.Windows.Forms.Label();
             this.spinOutput = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblCurrentTileName = new System.Windows.Forms.Label();
             this.lblCurrentTileType = new System.Windows.Forms.Label();
+            this.lblCurrentTileName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblNextTileOneType = new System.Windows.Forms.Label();
             this.lblNextTileOneName = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblNextTileTwoType = new System.Windows.Forms.Label();
             this.lblNextTileTwoName = new System.Windows.Forms.Label();
+            this.drivingGif = new System.Windows.Forms.PictureBox();
             this.spinnerImage = new System.Windows.Forms.PictureBox();
             this.stockButton = new System.Windows.Forms.Button();
             this.houseButton = new System.Windows.Forms.Button();
@@ -56,6 +56,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drivingGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).BeginInit();
@@ -118,16 +119,6 @@
             this.spinOutput.TabIndex = 1;
             this.spinOutput.Text = "<spin>";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.BackgroundImage = global::DotNetLibrary.Properties.Resources.giphy;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(52, 42);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 311);
-            this.panel1.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
@@ -140,27 +131,25 @@
             this.panel3.Size = new System.Drawing.Size(192, 237);
             this.panel3.TabIndex = 3;
             // 
-            // panel4
+            // lblCurrentTileType
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.lblNextTileOneType);
-            this.panel4.Controls.Add(this.lblNextTileOneName);
-            this.panel4.Location = new System.Drawing.Point(273, 416);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(166, 200);
-            this.panel4.TabIndex = 4;
+            this.lblCurrentTileType.AutoSize = true;
+            this.lblCurrentTileType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentTileType.Location = new System.Drawing.Point(14, 119);
+            this.lblCurrentTileType.Name = "lblCurrentTileType";
+            this.lblCurrentTileType.Size = new System.Drawing.Size(89, 24);
+            this.lblCurrentTileType.TabIndex = 2;
+            this.lblCurrentTileType.Text = "Tile Type";
             // 
-            // panel5
+            // lblCurrentTileName
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.lblNextTileTwoType);
-            this.panel5.Controls.Add(this.lblNextTileTwoName);
-            this.panel5.Location = new System.Drawing.Point(470, 416);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(166, 200);
-            this.panel5.TabIndex = 5;
+            this.lblCurrentTileName.AutoSize = true;
+            this.lblCurrentTileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentTileName.Location = new System.Drawing.Point(14, 77);
+            this.lblCurrentTileName.Name = "lblCurrentTileName";
+            this.lblCurrentTileName.Size = new System.Drawing.Size(97, 24);
+            this.lblCurrentTileName.TabIndex = 1;
+            this.lblCurrentTileName.Text = "Tile Name";
             // 
             // label1
             // 
@@ -173,25 +162,27 @@
             this.label1.Text = "Current Tile";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblCurrentTileName
+            // panel4
             // 
-            this.lblCurrentTileName.AutoSize = true;
-            this.lblCurrentTileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentTileName.Location = new System.Drawing.Point(14, 77);
-            this.lblCurrentTileName.Name = "lblCurrentTileName";
-            this.lblCurrentTileName.Size = new System.Drawing.Size(97, 24);
-            this.lblCurrentTileName.TabIndex = 1;
-            this.lblCurrentTileName.Text = "Tile Name";
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.lblNextTileOneType);
+            this.panel4.Controls.Add(this.lblNextTileOneName);
+            this.panel4.Location = new System.Drawing.Point(273, 416);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(166, 200);
+            this.panel4.TabIndex = 4;
             // 
-            // lblCurrentTileType
+            // label8
             // 
-            this.lblCurrentTileType.AutoSize = true;
-            this.lblCurrentTileType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentTileType.Location = new System.Drawing.Point(14, 119);
-            this.lblCurrentTileType.Name = "lblCurrentTileType";
-            this.lblCurrentTileType.Size = new System.Drawing.Size(89, 24);
-            this.lblCurrentTileType.TabIndex = 2;
-            this.lblCurrentTileType.Text = "Tile Type";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 29);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Next Tile";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNextTileOneType
             // 
@@ -213,16 +204,16 @@
             this.lblNextTileOneName.TabIndex = 3;
             this.lblNextTileOneName.Text = "Tile Name";
             // 
-            // label8
+            // panel5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 29);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Next Tile";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.lblNextTileTwoType);
+            this.panel5.Controls.Add(this.lblNextTileTwoName);
+            this.panel5.Location = new System.Drawing.Point(470, 416);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(166, 200);
+            this.panel5.TabIndex = 5;
             // 
             // label6
             // 
@@ -254,6 +245,16 @@
             this.lblNextTileTwoName.Size = new System.Drawing.Size(75, 18);
             this.lblNextTileTwoName.TabIndex = 6;
             this.lblNextTileTwoName.Text = "Tile Name";
+            // 
+            // drivingGif
+            // 
+            this.drivingGif.Image = global::DotNetLibrary.Properties.Resources.alienGiphy;
+            this.drivingGif.Location = new System.Drawing.Point(52, 26);
+            this.drivingGif.Name = "drivingGif";
+            this.drivingGif.Size = new System.Drawing.Size(732, 312);
+            this.drivingGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.drivingGif.TabIndex = 6;
+            this.drivingGif.TabStop = false;
             // 
             // spinnerImage
             // 
@@ -325,10 +326,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.drivingGif);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.spinnerImage);
             this.Controls.Add(this.controlBox);
             this.Controls.Add(this.background);
@@ -343,6 +344,7 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.drivingGif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinnerImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.background)).EndInit();
@@ -362,7 +364,6 @@
         private System.Windows.Forms.Button stockButton;
         private System.Windows.Forms.Label careerOutput;
         private System.Windows.Forms.Label moneyOutput;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblCurrentTileType;
         private System.Windows.Forms.Label lblCurrentTileName;
@@ -375,6 +376,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblNextTileTwoType;
         private System.Windows.Forms.Label lblNextTileTwoName;
+        private System.Windows.Forms.PictureBox drivingGif;
 
     }
 }

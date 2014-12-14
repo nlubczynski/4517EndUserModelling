@@ -73,6 +73,16 @@ namespace DotNetLibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alienGiphy {
+            get {
+                object obj = ResourceManager.GetObject("alienGiphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap defaultAlien {
             get {
                 object obj = ResourceManager.GetObject("defaultAlien", resourceCulture);
@@ -126,6 +136,16 @@ namespace DotNetLibrary.Properties {
         internal static System.Drawing.Bitmap giphy {
             get {
                 object obj = ResourceManager.GetObject("giphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap girlGiphy {
+            get {
+                object obj = ResourceManager.GetObject("girlGiphy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

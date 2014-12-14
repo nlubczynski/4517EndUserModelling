@@ -183,6 +183,8 @@
     <None Include="Resources\house_purchased.png" />
     <None Include="Resources\house_not_purchased.png" />
     <None Include="Resources\giphy.gif" />
+    <None Include="Resources\girlGiphy.gif" />
+    <None Include="Resources\alienGiphy.gif" />
     <Content Include="Resources\SpinnerStrip.png" />
     <None Include="Resources\triangle.png" />
     <None Include="Resources\Male.png" />

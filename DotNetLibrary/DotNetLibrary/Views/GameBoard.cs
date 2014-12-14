@@ -90,6 +90,8 @@ namespace DotNetLibrary.Views
             // Set initial frame
             currentImage = 0;
             spinnerImage.Image = sprites[currentImage];
+
+            drivingGif.Enabled = false;
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -137,6 +139,21 @@ namespace DotNetLibrary.Views
             moneyOutput.Text = String.Format("{0:C}", user.Money);
             spinOutput.Text = "";
             this.Roll = 0;
+
+            switch(user.Gender)
+            {
+                case Gender.ALIEN:
+                    drivingGif.Image = Properties.Resources.alienGiphy;
+                    break;
+
+                case Gender.FEMALE:
+                    drivingGif.Image = Properties.Resources.girlGiphy;
+                    break;
+
+                case Gender.MALE:
+                    drivingGif.Image = Properties.Resources.giphy;
+                    break;
+            }
 
             if (user.Job != null)
             {
@@ -241,6 +258,9 @@ namespace DotNetLibrary.Views
         }
         public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll)
         {
+            if(roll > 0)
+                drivingGif.Enabled = true;
+
             Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
 
             spinOutput.Text = roll.ToString();
@@ -274,6 +294,7 @@ namespace DotNetLibrary.Views
             else if(nextUser != null)
             {
                 this.setUser(nextUser);
+                drivingGif.Enabled = false;                
             }
         }
     }

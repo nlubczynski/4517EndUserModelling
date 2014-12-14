@@ -38,32 +38,41 @@
             // 
             // op1
             // 
+            this.op1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
+            this.op1.Font = new System.Drawing.Font("Gadugi", 20.25F);
+            this.op1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.op1.Location = new System.Drawing.Point(12, 104);
             this.op1.Name = "op1";
             this.op1.Size = new System.Drawing.Size(337, 87);
             this.op1.TabIndex = 0;
             this.op1.Text = "button1";
-            this.op1.UseVisualStyleBackColor = true;
+            this.op1.UseVisualStyleBackColor = false;
             this.op1.Click += new System.EventHandler(this.jb1_Click);
             // 
             // op2
             // 
+            this.op2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
+            this.op2.Font = new System.Drawing.Font("Gadugi", 20.25F);
+            this.op2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.op2.Location = new System.Drawing.Point(12, 197);
             this.op2.Name = "op2";
             this.op2.Size = new System.Drawing.Size(337, 87);
             this.op2.TabIndex = 1;
             this.op2.Text = "button2";
-            this.op2.UseVisualStyleBackColor = true;
+            this.op2.UseVisualStyleBackColor = false;
             this.op2.Click += new System.EventHandler(this.jb2_Click);
             // 
             // op3
             // 
+            this.op3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
+            this.op3.Font = new System.Drawing.Font("Gadugi", 20.25F);
+            this.op3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.op3.Location = new System.Drawing.Point(12, 290);
             this.op3.Name = "op3";
             this.op3.Size = new System.Drawing.Size(337, 87);
             this.op3.TabIndex = 2;
             this.op3.Text = "button3";
-            this.op3.UseVisualStyleBackColor = true;
+            this.op3.UseVisualStyleBackColor = false;
             this.op3.Click += new System.EventHandler(this.jb3_Click);
             // 
             // nameLabel
@@ -100,6 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(241)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(361, 389);
             this.Controls.Add(this.thingLabel);
             this.Controls.Add(this.textLabel);
