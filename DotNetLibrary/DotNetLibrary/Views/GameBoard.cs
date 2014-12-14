@@ -20,6 +20,8 @@ namespace DotNetLibrary.Views
         void StockButtonClicked(object sender, EventArgs e);
         [DispId(2)]
         void RollEnded(object sender, EventArgs roll);
+        [DispId(3)]
+        void MoveEnded(object sender, EventArgs args);
     }    
 
     [ClassInterface(ClassInterfaceType.AutoDual),
@@ -29,6 +31,7 @@ namespace DotNetLibrary.Views
         // event
         public event EventHandler StockButtonClicked;
         public event EventHandler RollEnded;
+        public event EventHandler MoveEnded;
 
         // image vars
         const int NUMBER_OF_FRAMES = 28;
@@ -323,6 +326,7 @@ namespace DotNetLibrary.Views
                     {
                         this.setUser(nextUser);
                         drivingGif.Enabled = false;
+                        if (MoveEnded != null) MoveEnded(this, new EventArgs());
                     }
                 });                
             }
