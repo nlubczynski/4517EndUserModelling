@@ -30,7 +30,7 @@ namespace DotNetLibrary
 
         private void addPlayerButtonClick(object sender, EventArgs e)
         {
-            if (isUserComplete())
+            if (isUserComplete() && _controller.players.Count < 6)
             {
                 // Add the new user
                 _controller.players.Add( new Models
@@ -51,6 +51,11 @@ namespace DotNetLibrary
 
                 femaleRadioButton.Checked = false;
                 alienRadioButton.Checked = false;
+            }
+
+            if (_controller.players.Count >= 6)
+            {
+                MessageBox.Show("Cannot add more than six players, sorry!", "Uh-oh!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if(_controller.players.Count > 0)
