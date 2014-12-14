@@ -42,11 +42,11 @@
             this.lblCurrentTileName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblNextOne = new System.Windows.Forms.Label();
             this.lblNextTileOneType = new System.Windows.Forms.Label();
             this.lblNextTileOneName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblNextTwo = new System.Windows.Forms.Label();
             this.lblNextTileTwoType = new System.Windows.Forms.Label();
             this.lblNextTileTwoName = new System.Windows.Forms.Label();
             this.drivingGif = new System.Windows.Forms.PictureBox();
@@ -205,7 +205,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
-            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.lblNextOne);
             this.panel4.Controls.Add(this.lblNextTileOneType);
             this.panel4.Controls.Add(this.lblNextTileOneName);
             this.panel4.Location = new System.Drawing.Point(273, 416);
@@ -213,16 +213,16 @@
             this.panel4.Size = new System.Drawing.Size(166, 200);
             this.panel4.TabIndex = 4;
             // 
-            // label8
+            // lblNextOne
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(11, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 29);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Next Tile";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNextOne.AutoSize = true;
+            this.lblNextOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNextOne.Location = new System.Drawing.Point(11, 9);
+            this.lblNextOne.Name = "lblNextOne";
+            this.lblNextOne.Size = new System.Drawing.Size(110, 29);
+            this.lblNextOne.TabIndex = 5;
+            this.lblNextOne.Text = "Next Tile";
+            this.lblNextOne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNextTileOneType
             // 
@@ -249,7 +249,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
-            this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.lblNextTwo);
             this.panel5.Controls.Add(this.lblNextTileTwoType);
             this.panel5.Controls.Add(this.lblNextTileTwoName);
             this.panel5.Location = new System.Drawing.Point(470, 416);
@@ -257,16 +257,16 @@
             this.panel5.Size = new System.Drawing.Size(166, 200);
             this.panel5.TabIndex = 5;
             // 
-            // label6
+            // lblNextTwo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 29);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Next Tile";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNextTwo.AutoSize = true;
+            this.lblNextTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNextTwo.Location = new System.Drawing.Point(11, 9);
+            this.lblNextTwo.Name = "lblNextTwo";
+            this.lblNextTwo.Size = new System.Drawing.Size(110, 29);
+            this.lblNextTwo.TabIndex = 8;
+            this.lblNextTwo.Text = "Next Tile";
+            this.lblNextTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNextTileTwoType
             // 
@@ -375,11 +375,11 @@
         private System.Windows.Forms.Label lblCurrentTileName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNextOne;
         private System.Windows.Forms.Label lblNextTileOneType;
         private System.Windows.Forms.Label lblNextTileOneName;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNextTwo;
         private System.Windows.Forms.Label lblNextTileTwoType;
         private System.Windows.Forms.Label lblNextTileTwoName;
         private System.Windows.Forms.PictureBox drivingGif;

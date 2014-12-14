@@ -286,7 +286,7 @@ namespace DotNetLibrary.Views
             setStock(user.Stock);
         }
 
-        public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll)
+        public void moveUserUpdate(User currentUser, User nextUser, Tile currentTile, Tile lastTile, int roll, bool alternatePath = false)
         {
             if(roll > 0)
                 drivingGif.Enabled = true;
@@ -294,6 +294,10 @@ namespace DotNetLibrary.Views
             setStock(currentUser.Stock);
 
             Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
+
+            //if there is a second option and alternate Path is chosen next tile is that tile
+            if (currentTile.Neighbours.size() > 1 && alternatePath)
+                nextTile = (Tile) currentTile.Neighbours.GetAt(1);
 
             spinOutput.Text = roll.ToString();
 
@@ -303,10 +307,16 @@ namespace DotNetLibrary.Views
 
             if (currentTile.Neighbours.size() > 1)
             {
+                //update labels
+                lblNextOne.Text = "Road Split!";
+                lblNextTwo.Text = "Road Split!";
                 nextNextTile = (Tile)currentTile.Neighbours.GetAt(1);
             }
             else
             {
+                //update labels
+                lblNextOne.Text = "Next Tile";
+                lblNextTwo.Text = "Next Tile";
                 nextNextTile = (Tile)nextTile.Neighbours.GetAt(0);
             }
 
@@ -320,7 +330,7 @@ namespace DotNetLibrary.Views
                 ThreadPool.QueueUserWorkItem(delegate
                 {
                     Thread.Sleep(750);
-                    Invoke(new Action(delegate { this.moveUserUpdate(currentUser, nextUser, currentTile.Neighbours.GetAt(0), lastTile, --roll);}));
+                    Invoke(new Action(delegate { this.moveUserUpdate(currentUser, nextUser, nextTile, lastTile, --roll, alternatePath);}));
                 });
             }
             else if (lastTile != null && currentTile == lastTile)
