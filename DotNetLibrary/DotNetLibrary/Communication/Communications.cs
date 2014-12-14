@@ -33,7 +33,25 @@ namespace DotNetLibrary
         SIX,
         SEVEN,
         EIGHT,
-        NINE,
-        TEN
+        NINE
     };
+
+    public class Conversion
+    {
+        public Stock stockFromInt(int number)
+        {
+            if(number <= 0 || number >= Enum.GetNames(typeof(Stock)).Length)
+            {
+                return Stock.NO_STOCK;
+            }
+
+            return (Stock)number;
+        }
+
+        public int intFromStock(Stock stock)
+        {
+            return (int)stock;
+        }
+    }
+
 }
