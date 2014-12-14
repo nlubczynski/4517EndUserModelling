@@ -154,7 +154,7 @@ namespace DotNetLibrary.Views
 
             this.TurnEnabled = true;
 
-            this.moveUserUpdate(user);
+            this.moveUserUpdate(user, this.Roll);
         }
 
         public void setStock(Stock stock)
@@ -238,12 +238,16 @@ namespace DotNetLibrary.Views
             lblNextTileTwoName.Text = nextNextTile.Name;
             lblNextTileTwoType.Text = nextNextTile.Description;
         }
-        public void moveUserUpdate(User currentUser)
+        public void moveUserUpdate(User currentUser, int roll)
         {
             Tile currentTile = currentUser.CurrentTile;
             Tile nextTile = (Tile)currentTile.Neighbours.GetAt(0);
 
+            spinOutput.Text = roll.ToString();
+
             Tile nextNextTile;
+
+            moneyOutput.Text = String.Format("{0:C}", currentUser.Money);
 
             if (currentTile.Neighbours.size() > 1)
             {
@@ -258,7 +262,6 @@ namespace DotNetLibrary.Views
             this.updateCurrentTile(currentTile);
             this.updateNextTile(nextTile);
             this.updateNextNextTile(nextNextTile);
-
         }
 
     }
