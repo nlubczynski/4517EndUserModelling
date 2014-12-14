@@ -22,7 +22,8 @@ namespace DotNetLibrary.Models
         public Gender Gender { get; set; }
         public Stock Stock { get; set; }
         public Image Image { get; set; }
-        
+        public Utility.VectorLifeTile LifeTiles { get; private set; }
+
         public User()
         {
             Name = "John Doe";
@@ -35,6 +36,7 @@ namespace DotNetLibrary.Models
             CurrentTile = null;
             Gender = Gender.MALE;
             Stock = Stock.NO_STOCK;
+            LifeTiles = new Utility.VectorLifeTile();
         }
 
         public User setImage(Image image)
