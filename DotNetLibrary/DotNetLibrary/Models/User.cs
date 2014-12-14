@@ -24,6 +24,7 @@ namespace DotNetLibrary.Models
         public Image Image { get; set; }
         public Utility.VectorLifeTile LifeTiles { get; private set; }
         public bool MissNextTurn { get; set; }
+        public bool Retired { get; set; }
 
         public int NumberOfKids { get; set; }
         public User()
@@ -39,6 +40,7 @@ namespace DotNetLibrary.Models
             Gender = Gender.MALE;
             Stock = Stock.NO_STOCK;
             LifeTiles = new Utility.VectorLifeTile();
+            Retired = false;
         }
 
         public User setImage(Image image)
