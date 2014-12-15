@@ -108,6 +108,12 @@
     <Compile Include="Views\ChooseJob.Designer.cs">
       <DependentUpon>ChooseJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChooseTwoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChooseTwoForm.Designer.cs">
+      <DependentUpon>ChooseTwoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\GameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\ChooseJob.resx">
       <DependentUpon>ChooseJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChooseTwoForm.resx">
+      <DependentUpon>ChooseTwoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\GameBoard.resx">
       <DependentUpon>GameBoard.cs</DependentUpon>
