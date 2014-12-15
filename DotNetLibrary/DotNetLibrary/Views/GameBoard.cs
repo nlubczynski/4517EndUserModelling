@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DotNetLibrary.Models;
 using System.Threading;
+using DotNetLibrary.Utility;
 
 namespace DotNetLibrary.Views
 {
@@ -298,7 +299,7 @@ namespace DotNetLibrary.Views
                 this.updateNextTile(currentTile.Neighbours.GetAt(0));
                 this.updateNextNextTile(currentTile.Neighbours.GetAt(1));
 
-                MessageBox.Show("Welcome To Retirement! Here is your pension!", "Retired!", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Welcome To Retirement! Here is: " + (currentUser.Salary.Wage*.5).ToString("C"), "Retired!", MessageBoxButtons.OK, MessageBoxIcon.None);
                 currentUser.addMoney(currentUser.Salary.Wage * .5);
 
                 if (RetiredUserMoveEnd != null) RetiredUserMoveEnd(this, new EventArgs());
@@ -354,6 +355,11 @@ namespace DotNetLibrary.Views
                     }
                 });                
             }
+        }
+
+        public void EndGame(VectorUser users)
+        {
+            Controller.endGame(users);
         }
     }
 }

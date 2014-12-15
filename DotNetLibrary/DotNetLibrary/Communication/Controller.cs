@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Collections;
 using DotNetLibrary.Models;
+using DotNetLibrary.Utility;
 using DotNetLibrary.Views;
 
 namespace DotNetLibrary
@@ -48,6 +49,42 @@ namespace DotNetLibrary
             }
 
             return returnVal;
+        }
+
+        public static void endGame(VectorUser users)
+        {
+            List<String> results = new List<String>();
+
+            for (int i = 0; i < users.size(); i++)
+            {
+                User user = (User)users.GetAt(i);
+                StringBuilder item = new StringBuilder();
+                item.Append(user.Name);
+                item.Append("  Cash: ");
+                item.Append(user.Money.ToString("C"));
+                item.Append("  Life Tiles: ");
+                item.Append(getLifeTiles(user).ToString("C"));
+                item.Append("  Networth: ");
+                item.Append((getLifeTiles(user) + user.Money).ToString("C"));
+                results.Add(item.ToString());
+
+                Results resultView = new Results();
+                resultView.bindData(results);
+
+                resultView.Show();
+            }
+        }
+
+        private static double getLifeTiles(User user)
+        {
+            double value = 0;
+
+            for (int i = 0; i < user.LifeTiles.size(); i++)
+            {
+                value += user.LifeTiles.GetAt(i).Value;
+            }
+
+            return value;
         }
     }
 }
