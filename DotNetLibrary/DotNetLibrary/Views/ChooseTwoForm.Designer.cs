@@ -37,7 +37,7 @@
             // 
             this.btnFirstOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
             this.btnFirstOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFirstOption.Location = new System.Drawing.Point(12, 115);
+            this.btnFirstOption.Location = new System.Drawing.Point(214, 135);
             this.btnFirstOption.Name = "btnFirstOption";
             this.btnFirstOption.Size = new System.Drawing.Size(200, 63);
             this.btnFirstOption.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             this.btnSecondOption.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(206)))), ((int)(((byte)(237)))));
             this.btnSecondOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSecondOption.Location = new System.Drawing.Point(224, 115);
+            this.btnSecondOption.Location = new System.Drawing.Point(420, 135);
             this.btnSecondOption.Name = "btnSecondOption";
             this.btnSecondOption.Size = new System.Drawing.Size(200, 63);
             this.btnSecondOption.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(241)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(436, 190);
+            this.ClientSize = new System.Drawing.Size(632, 229);
             this.Controls.Add(this.lblPrompt);
             this.Controls.Add(this.btnSecondOption);
             this.Controls.Add(this.btnFirstOption);
