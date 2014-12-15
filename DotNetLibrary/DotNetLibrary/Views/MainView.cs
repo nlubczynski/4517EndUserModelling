@@ -172,6 +172,11 @@ namespace DotNetLibrary
                 }
             }
         }
-          
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Views.Help help = new Views.Help();
+            help.ShowDialog();
+        }          
     }
 }
