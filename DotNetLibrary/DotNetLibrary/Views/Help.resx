@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Users traverse the Game of Life board, collecting and spending money along the way. In addition, they'll find themselves dealing with random facts of life! Collect LIFE tiles to accumulate more bonus funds. The winner is the player with the highest dollar amount at the end of the game.
+
+The game supports one to six players, but we recommend playing with at least two!
+
+To start, enter your name, choose your profile picture (by clicking on the silhouette) and gender (from the radio buttons) and click add. You can remove players by selecting their name from the list, and clicking "Remove".</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Users traverse the Game of Life board, collecting and spending money along the way. In addition, they'll find themselves dealing with random facts of life! Collect LIFE tiles to accumulate more bonus funds. The winner is the player with the highest dollar amount at the end of the game.
+
+The game supports one to six players, but we recommend playing with at least two!
+
+To start, enter your name, choose your profile picture (by clicking on the silhouette) and gender (from the radio buttons) and click add. You can remove players by selecting their name from the list, and clicking "Remove".
+
+LIFE TILES
+Each LIFE Tile carries a secret message: a special achievement, and a dollar amount which counts toward your total cash value at the end of the game.
+
+YOUR TURN
+On your turn, spin the wheel. (If the spinner arm stops between numbers, spin again.) Then move your car the number of spaces on the spinner. Always move your car forward, in the direction of the arrows. (Just as in real life, you can’t go back in time!) This ends your turn.
+
+You can also choose to purchase stock on your turn (before you spin). If you have more than $50,000, you can choose to buy a stock. You can only have one stock at a time, so buying a stock when you already have one simply replaces the one you have (for $50,000). If any player spins the number of your stock, you receive $5,000. 
+
+GETTING STARTED
+On your first turn, decide either to start a career, or to start college. College offers more career and salary options, but it takes time-and it puts you in debt!
+
+START CAREER
+Choose Start Career from the pop up on your first turn if you want to start working. Select Start College if you want to start college. If you decide to go to college, you'll go $40,000 into debt, however, you get to select from more jobs and salaries when you graduate.
+
+JOB SEARCH
+Whenever the game prompts you to choose a job, simply select a career and salary from the pop up windows. The values are selected randomly from the pool of available jobs, so having more choices gives you better odds of a higher paying job. If you already have a job, your job will be reinserted into the pool, and you'll be presented with new job and/or salary options depending on the situation.
+
+SPACES
+Whenever you land on a space, you'll automatically follow the result of that space (such as paying money to another player, or earning a bonus). In some situations, where choice is required, you'll be presented a pop up window that will allow you to make that choice.
+
+JOB SEARCH, GET MARRIED and BUY A HOUSE. 
+Whenever you reach a one of these spaces, you'll be stopped -- even if you have moves left. 
+
+LIFE SPACES
+Whenever you land on a LIFE space, you'll be given a LIFE tile. At the end of the game, these tiles give you bonus cash, so collect as many as you can! If there are no more LIFE tiles, you will not collect a tile.
+
+PAY DAY
+Whenever you land on or pass a PAY DAY space, collect your salary from the bank before following any other space directions. On some turns, you may be able to collect 2 or more salaries!
+
+BUYING A HOUSE
+When you reach this space, you'll stop -- even if you have moves left. Follow the pop up instructions to purchase your house! If you don't have enough money, you'll have to go into debt to pay for it.
+
+RETIREMENT
+When you reach retirement, you'll start accumulating your pension! Until the other users finish, you'll receive half of your salary in pension (it pays to finish first!). 
+
+END GAME
+Once every player reaches retirement, the net values are calculated. The value is equal to the sum of a user's cash, and value on each of their LIFE cards. The user with the highest value wins!</value>
+  </data>
+</root>

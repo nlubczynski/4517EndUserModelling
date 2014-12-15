@@ -83,6 +83,16 @@ namespace DotNetLibrary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap createProfileHelp {
+            get {
+                object obj = ResourceManager.GetObject("createProfileHelp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap defaultAlien {
             get {
                 object obj = ResourceManager.GetObject("defaultAlien", resourceCulture);

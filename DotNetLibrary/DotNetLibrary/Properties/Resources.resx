@@ -121,14 +121,14 @@
   <data name="alien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stock_six" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stock_six.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="house_purchased" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\house_purchased.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SpinnerStrip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SpinnerStrip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stock_two" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stock_two.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defaultMale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defaultMale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stock_seven" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stock_seven.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,9 +138,6 @@
   </data>
   <data name="girlGiphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\girlGiphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="stock_one" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stock_one.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="defaultFemale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\defaultFemale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,8 +157,11 @@
   <data name="GameOfLife" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GameOfLife.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Female" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stock_six" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stock_six.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alienGiphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alienGiphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Male" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Male.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +175,8 @@
   <data name="stock_none" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stock_none.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="defaultMale" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\defaultMale.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="stock_one" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stock_one.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="defaultAlien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\defaultAlien.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,13 +184,16 @@
   <data name="house_not_purchased" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\house_not_purchased.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="stock_two" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stock_two.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SpinnerStrip" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SpinnerStrip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Female" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Female.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stock_eight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stock_eight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="alienGiphy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\alienGiphy.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="createProfileHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\createProfileHelp.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
